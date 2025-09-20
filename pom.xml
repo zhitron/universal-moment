@@ -6,15 +6,10 @@
 
     <groupId>io.github.zhitron</groupId>
     <artifactId>universal-moment</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>Universal Moment</name>
     <description>
-        Universal Moment is a Java library designed to provide a comprehensive and easy-to-use API for handling date and time operations.
-        It aims to simplify the complexities of date manipulation, formatting, and parsing, making it an essential tool for developers
-        working with temporal data in their applications. The library offers a wide range of features including but not limited to
-        timezone handling, duration calculations, and support for various calendar systems. With its intuitive design and extensive
-        documentation, Universal Moment enables developers to focus on building robust applications without worrying about the
-        intricacies of date and time management.
+        Universal Moment is a Java library providing a comprehensive API for date and time operations. It simplifies date manipulation, formatting, parsing, timezone handling, and duration calculations for developers working with temporal data.
     </description>
 
     <properties>

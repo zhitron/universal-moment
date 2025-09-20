@@ -992,7 +992,8 @@ public class Moment implements Comparable<Moment> {
     /**
      * 设置时间戳
      *
-     * @param input 输入参数
+     * @param input  时间字符串，如 "2025-04-16T13:26:47.123"
+     * @param format 时间格式，如 "yyyy-MM-dd'T'HH:mm:ss.SSS"
      * @return 返回this
      */
     public final Moment setTimestamp(String input, String format) {
@@ -1002,7 +1003,9 @@ public class Moment implements Comparable<Moment> {
     /**
      * 设置时间戳
      *
-     * @param input 输入参数
+     * @param input  时间字符串，如 "2025-04-16T13:26:47.123"
+     * @param format 时间格式，如 "yyyy-MM-dd'T'HH:mm:ss.SSS"
+     * @param zoneId 时区
      * @return 返回this
      */
     public final Moment setTimestamp(String input, String format, ZoneId zoneId) {
@@ -1077,7 +1080,7 @@ public class Moment implements Comparable<Moment> {
         if (month < 1 || month > MONTH_NEXT) {
             throw new IllegalArgumentException("The month exceeds the range of [1,12],The actual value resolved is '" + month + "'.");
         }
-        if (day < 1 || day > (t = MD[leap(year)][month])) {
+        if (day < 1 || day > (t = MD[leap(year)][month - 1])) {
             throw new IllegalArgumentException("The dat exceeds the range of [1," + t + "],The actual value resolved is '" + day + "'.");
         }
         if (hour < 0 || hour >= HOUR_NEXT) {
@@ -1109,7 +1112,8 @@ public class Moment implements Comparable<Moment> {
     /**
      * 设置时间戳
      *
-     * @param input 输入参数
+     * @param input  输入参数
+     * @param zoneId 时区
      * @return 返回this
      */
     public final Moment setTimestamp(LocalDateTime input, ZoneId zoneId) {
